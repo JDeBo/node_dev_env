@@ -2,8 +2,11 @@ version: "3"
 services:
   node_dev_env:
     build: .
+    env_file:
+      - .env
     container_name: node-docker
     ports:
-      - 8080:3000
+      - 3000:3000
+      - 27018:27017
     volumes:
       - ./:/home/app
